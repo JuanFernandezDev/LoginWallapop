@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".BlueFragment"
+    android:background="@drawable/fondo_wallapop2"
+    android:scaleType="centerCrop"
+    >
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="2"
+        android:background="@drawable/degradado_fondo"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/wallapop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:padding="16dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Continue with Facebook"
+            android:textAllCaps="false"
+            app:backgroundTint="#3b5998"
+            app:cornerRadius="40dp"
+            app:icon="@drawable/facebook3"
+            app:iconGravity="start"
+
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="Continue with Google"
+            app:backgroundTint="#ff4d4d"
+            android:paddingLeft="20dp"
+            app:cornerRadius="40dp"
+            app:icon="@drawable/google"
+            app:iconGravity="start"
+            app:iconSize="18dp"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnW"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Register free"
+            android:textAllCaps="false"
+            android:paddingLeft="18dp"
+            app:backgroundTint="#00cccc"
+            app:cornerRadius="40dp"
+            app:icon="@drawable/icono_wallapop"
+            app:iconGravity="start"
+            app:iconSize="23dp"/>
+
+        <TextView
+            android:id="@+id/tvLogin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAlignment="center"
+            android:text="Already got an Account?      Login"
+            android:paddingTop="10dp"
+            android:textColor="@color/white"
+            />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
