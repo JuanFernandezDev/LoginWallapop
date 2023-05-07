@@ -1,5 +1,6 @@
 package com.example.navegacionii
 
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -7,11 +8,10 @@ import android.text.SpannableString
 import android.text.Spanned
 import android.text.method.LinkMovementMethod
 import android.text.style.ClickableSpan
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.MenuItem
-import android.view.View
-import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
+import androidx.core.content.ContextCompat.getSystemService
 import androidx.core.widget.addTextChangedListener
 import com.example.navegacionii.databinding.FragmentRedBinding
 
@@ -32,6 +32,15 @@ class RedFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         enableOnBackPressed(true)
         super.onViewCreated(view, savedInstanceState)
+
+        binding.root.setOnTouchListener { _, event ->
+            if (event.action == MotionEvent.ACTION_DOWN) {
+                val imm = requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+                imm.hideSoftInputFromWindow(view.windowToken, 0)
+            }
+            false
+        }
+
 
         //Si el email o el formato de la pwd esta bien se quita el error
         binding.email.editText?.addTextChangedListener {
@@ -91,6 +100,8 @@ class RedFragment : Fragment() {
                      transaction.replace(R.id.mainContainer, fragment).addToBackStack("RedFragment@").commit()
                  }
              }
+
+
          }
 
 
